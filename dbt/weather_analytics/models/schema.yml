@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: weather_metrics
+    columns:
+      - name: date
+        data_tests:
+          - not_null
+          - unique
+      - name: temp_avg
+        data_tests:
+          - not_null
