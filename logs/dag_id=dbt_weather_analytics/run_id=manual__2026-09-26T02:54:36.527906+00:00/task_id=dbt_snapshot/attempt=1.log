@@ -1,0 +1,35 @@
+[2026-09-26T02:54:53.755+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-09-26T02:54:53.765+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_weather_analytics.dbt_snapshot manual__2026-09-26T02:54:36.527906+00:00 [queued]>
+[2026-09-26T02:54:53.769+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_weather_analytics.dbt_snapshot manual__2026-09-26T02:54:36.527906+00:00 [queued]>
+[2026-09-26T02:54:53.769+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2026-09-26T02:54:53.775+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2026-09-26 02:54:36.527906+00:00
+[2026-09-26T02:54:53.782+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=10320) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-09-26T02:54:53.781+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_weather_analytics', 'dbt_snapshot', 'manual__2026-09-26T02:54:36.527906+00:00', '--job-id', '107', '--raw', '--subdir', 'DAGS_FOLDER/build_elt_with_dbt.py', '--cfg-path', '/tmp/tmp48ec9dem']
+[2026-09-26T02:54:53.784+0000] {standard_task_runner.py:105} INFO - Job 107: Subtask dbt_snapshot
+[2026-09-26T02:54:53.783+0000] {standard_task_runner.py:72} INFO - Started process 10321 to run task
+[2026-09-26T02:54:53.811+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_weather_analytics.dbt_snapshot manual__2026-09-26T02:54:36.527906+00:00 [running]> on host 10396b14c6e7
+[2026-09-26T02:54:53.847+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_weather_analytics' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2026-09-26T02:54:36.527906+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-26T02:54:36.527906+00:00'
+[2026-09-26T02:54:53.847+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-09-26T02:54:53.857+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-09-26T02:54:53.857+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/dbt/weather_analytics --project-dir /opt/***/dbt/weather_analytics']
+[2026-09-26T02:54:53.862+0000] {subprocess.py:86} INFO - Output:
+[2026-09-26T02:54:54.758+0000] {subprocess.py:93} INFO - [0m02:54:54  Running with dbt=1.8.7
+[2026-09-26T02:54:55.140+0000] {subprocess.py:93} INFO - [0m02:54:55  Registered adapter: snowflake=1.8.1
+[2026-09-26T02:54:55.304+0000] {subprocess.py:93} INFO - [0m02:54:55  Found 2 models, 3 data tests, 1 snapshot, 454 macros
+[2026-09-26T02:54:55.305+0000] {subprocess.py:93} INFO - [0m02:54:55
+[2026-09-26T02:54:58.161+0000] {subprocess.py:93} INFO - [0m02:54:58  Concurrency: 1 threads (target='dev')
+[2026-09-26T02:54:58.162+0000] {subprocess.py:93} INFO - [0m02:54:58
+[2026-09-26T02:54:58.174+0000] {subprocess.py:93} INFO - [0m02:54:58  1 of 1 START snapshot snapshot.snapshot_weather_metrics ........................ [RUN]
+[2026-09-26T02:55:02.259+0000] {subprocess.py:93} INFO - [0m02:55:02  1 of 1 OK snapshotted snapshot.snapshot_weather_metrics ........................ [[32mSUCCESS 0[0m in 4.07s]
+[2026-09-26T02:55:02.267+0000] {subprocess.py:93} INFO - [0m02:55:02
+[2026-09-26T02:55:02.268+0000] {subprocess.py:93} INFO - [0m02:55:02  Finished running 1 snapshot in 0 hours 0 minutes and 6.96 seconds (6.96s).
+[2026-09-26T02:55:02.297+0000] {subprocess.py:93} INFO - [0m02:55:02
+[2026-09-26T02:55:02.298+0000] {subprocess.py:93} INFO - [0m02:55:02  [32mCompleted successfully[0m
+[2026-09-26T02:55:02.299+0000] {subprocess.py:93} INFO - [0m02:55:02
+[2026-09-26T02:55:02.299+0000] {subprocess.py:93} INFO - [0m02:55:02  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2026-09-26T02:55:02.909+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-09-26T02:55:02.925+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-09-26T02:55:02.926+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_weather_analytics, task_id=dbt_snapshot, run_id=manual__2026-09-26T02:54:36.527906+00:00, execution_date=20260926T025436, start_date=20260926T025453, end_date=20260926T025502
+[2026-09-26T02:55:02.971+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-09-26T02:55:02.984+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-09-26T02:55:02.985+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

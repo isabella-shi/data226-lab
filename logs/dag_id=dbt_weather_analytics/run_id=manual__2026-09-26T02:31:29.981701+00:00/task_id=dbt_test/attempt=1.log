@@ -1,0 +1,39 @@
+[2026-09-26T02:31:39.071+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-09-26T02:31:39.079+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_weather_analytics.dbt_test manual__2026-09-26T02:31:29.981701+00:00 [queued]>
+[2026-09-26T02:31:39.083+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_weather_analytics.dbt_test manual__2026-09-26T02:31:29.981701+00:00 [queued]>
+[2026-09-26T02:31:39.083+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2026-09-26T02:31:39.087+0000] {taskinstance.py:2888} INFO - Executing <Task(BashOperator): dbt_test> on 2026-09-26 02:31:29.981701+00:00
+[2026-09-26T02:31:39.094+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=9157) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-09-26T02:31:39.092+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_weather_analytics', 'dbt_test', 'manual__2026-09-26T02:31:29.981701+00:00', '--job-id', '76', '--raw', '--subdir', 'DAGS_FOLDER/build_elt_with_dbt.py', '--cfg-path', '/tmp/tmpdx43tmqo']
+[2026-09-26T02:31:39.095+0000] {standard_task_runner.py:105} INFO - Job 76: Subtask dbt_test
+[2026-09-26T02:31:39.095+0000] {standard_task_runner.py:72} INFO - Started process 9158 to run task
+[2026-09-26T02:31:39.128+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_weather_analytics.dbt_test manual__2026-09-26T02:31:29.981701+00:00 [running]> on host 10396b14c6e7
+[2026-09-26T02:31:39.170+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_weather_analytics' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2026-09-26T02:31:29.981701+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-26T02:31:29.981701+00:00'
+[2026-09-26T02:31:39.171+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-09-26T02:31:39.179+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-09-26T02:31:39.179+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt test --profiles-dir /opt/***/dbt/weather_analytics --project-dir /opt/***/dbt/weather_analytics']
+[2026-09-26T02:31:39.184+0000] {subprocess.py:86} INFO - Output:
+[2026-09-26T02:31:40.065+0000] {subprocess.py:93} INFO - [0m02:31:40  Running with dbt=1.8.7
+[2026-09-26T02:31:40.495+0000] {subprocess.py:93} INFO - [0m02:31:40  Registered adapter: snowflake=1.8.1
+[2026-09-26T02:31:41.105+0000] {subprocess.py:93} INFO - [0m02:31:41  Found 2 models, 1 snapshot, 3 data tests, 454 macros
+[2026-09-26T02:31:41.108+0000] {subprocess.py:93} INFO - [0m02:31:41
+[2026-09-26T02:31:43.149+0000] {subprocess.py:93} INFO - [0m02:31:43  Concurrency: 1 threads (target='dev')
+[2026-09-26T02:31:43.153+0000] {subprocess.py:93} INFO - [0m02:31:43
+[2026-09-26T02:31:43.170+0000] {subprocess.py:93} INFO - [0m02:31:43  1 of 3 START test not_null_weather_metrics_city ................................ [RUN]
+[2026-09-26T02:31:44.198+0000] {subprocess.py:93} INFO - [0m02:31:44  1 of 3 PASS not_null_weather_metrics_city ...................................... [[32mPASS[0m in 1.03s]
+[2026-09-26T02:31:44.201+0000] {subprocess.py:93} INFO - [0m02:31:44  2 of 3 START test not_null_weather_metrics_date ................................ [RUN]
+[2026-09-26T02:31:45.094+0000] {subprocess.py:93} INFO - [0m02:31:45  2 of 3 PASS not_null_weather_metrics_date ...................................... [[32mPASS[0m in 0.89s]
+[2026-09-26T02:31:45.096+0000] {subprocess.py:93} INFO - [0m02:31:45  3 of 3 START test not_null_weather_metrics_temp_avg ............................ [RUN]
+[2026-09-26T02:31:46.062+0000] {subprocess.py:93} INFO - [0m02:31:46  3 of 3 PASS not_null_weather_metrics_temp_avg .................................. [[32mPASS[0m in 0.96s]
+[2026-09-26T02:31:46.073+0000] {subprocess.py:93} INFO - [0m02:31:46
+[2026-09-26T02:31:46.075+0000] {subprocess.py:93} INFO - [0m02:31:46  Finished running 3 data tests in 0 hours 0 minutes and 4.96 seconds (4.96s).
+[2026-09-26T02:31:46.122+0000] {subprocess.py:93} INFO - [0m02:31:46
+[2026-09-26T02:31:46.124+0000] {subprocess.py:93} INFO - [0m02:31:46  [32mCompleted successfully[0m
+[2026-09-26T02:31:46.124+0000] {subprocess.py:93} INFO - [0m02:31:46
+[2026-09-26T02:31:46.125+0000] {subprocess.py:93} INFO - [0m02:31:46  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[2026-09-26T02:31:46.877+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-09-26T02:31:46.906+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-09-26T02:31:46.907+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_weather_analytics, task_id=dbt_test, run_id=manual__2026-09-26T02:31:29.981701+00:00, execution_date=20260926T023129, start_date=20260926T023139, end_date=20260926T023146
+[2026-09-26T02:31:46.956+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-09-26T02:31:46.981+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-09-26T02:31:46.983+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

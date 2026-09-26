@@ -1,5 +1,6 @@
 with source as (
     select
+	city,
         date,
         latitude,
         longitude,
